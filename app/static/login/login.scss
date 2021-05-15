@@ -3,10 +3,21 @@ html, body{
     padding:0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-    //background:red;
+    overflow: hidden;
+    background:rgb(248,248,248);
     //weifnweoifewoiwfmeofim
 }
 
+.all{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius:30px;
+}
 
 .header{
     padding:3em;
@@ -14,11 +25,12 @@ html, body{
 
     hr{
         margin-top:2px;
-        width:5%;
+        width:20%;
         margin-left:0px;
-        border:none;
-        height:10px;
-        color:black;
+        border-top: 3px solid black;
+        border-bottom:none;
+        border-left:none;
+         border-right:none;
     }
     
     h1{
@@ -46,7 +58,7 @@ html, body{
         border: none;
         box-shadow: 0px 0px 5px 1px rgba(32, 32, 32, 0.2);
         border-radius: 5px;
-     
+        margin-bottom: 2em;
     }
 
     p{
@@ -60,12 +72,25 @@ html, body{
 
     }
     .sign-up:hover {
-        color:rgba(0, 81, 255, 0.3);
+        color:rgba(0, 81, 255, 0.781);
     }
 
     .submit-button{
         padding:1em;
-      
+        padding-left:5em;
+        padding-right:5em;
+        font-weight: bold;
+        border-width:0px;
+        background-color:rgb(25, 87, 201);
+        color:white;
+    }
+
+    .submit-button:hover{
+        font-weight: bold;
+        border-width:0px;
+        background-color:white;
+        color:rgb(25, 87, 201);
+        box-shadow: 0px 0px 5px 1px rgba(32, 32, 32, 0.05);
     }
     
 }
