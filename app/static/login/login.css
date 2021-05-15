@@ -41,6 +41,7 @@ html, body {
 
 .header h1 {
   margin-bottom: 10px;
+  font-size: 36px;
 }
 
 .form {
@@ -55,6 +56,16 @@ html, body {
   -ms-grid-columns: 1fr 3fr;
       grid-template-columns: 1fr 3fr;
   margin: 20px;
+  margin-left: 0px;
+}
+
+.form label[for=email] {
+  margin-top: 0.6em;
+}
+
+.form label[for=password] {
+  margin-top: 0.5em;
+  margin-right: 1em;
 }
 
 .form .login_input {
@@ -63,9 +74,9 @@ html, body {
   width: 100%;
   color: black;
   outline: none;
-  border: none;
-  -webkit-box-shadow: 0px 0px 5px 1px rgba(32, 32, 32, 0.2);
-          box-shadow: 0px 0px 5px 1px rgba(32, 32, 32, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(32, 32, 32, 0.02);
+          box-shadow: 0px 0px 5px 1px rgba(32, 32, 32, 0.02);
   border-radius: 5px;
   margin-bottom: 2em;
 }
@@ -81,7 +92,7 @@ html, body {
 }
 
 .form .sign-up:hover {
-  color: rgba(0, 81, 255, 0.781);
+  color: #0004ff;
 }
 
 .form .submit-button {
@@ -92,6 +103,7 @@ html, body {
   border-width: 0px;
   background-color: #1957c9;
   color: white;
+  border-radius: 7px;
 }
 
 .form .submit-button:hover {
