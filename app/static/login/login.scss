@@ -3,9 +3,21 @@ html, body{
     padding:0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-    //background:red;
+    overflow: hidden;
+    background:rgb(248,248,248);
+    //weifnweoifewoiwfmeofim
 }
 
+.all{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius:30px;
+}
 
 .header{
     padding:3em;
@@ -13,15 +25,17 @@ html, body{
 
     hr{
         margin-top:2px;
-        width:5%;
+        width:20%;
         margin-left:0px;
-        border:none;
-        height:10px;
-        color:black;
+        border-top: 3px solid black;
+        border-bottom:none;
+        border-left:none;
+         border-right:none;
     }
     
     h1{
         margin-bottom:10px;
+        font-size: 36px;
     }
 }
 
@@ -34,6 +48,15 @@ html, body{
         display: grid;
         grid-template-columns: 1fr 3fr;
         margin: 20px;
+        margin-left:0px;
+    }
+
+    label[for=email]{
+        margin-top:0.6em;
+    }
+    label[for=password]{
+        margin-top:0.5em;
+        margin-right:1em;
     }
 
     .login_input{
@@ -42,10 +65,10 @@ html, body{
         width: 100%;
         color:black;
         outline: none;
-        border: none;
-        box-shadow: 0px 0px 5px 1px rgba(32, 32, 32, 0.2);
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 0px 5px 1px rgba(32, 32, 32, 0.02);
         border-radius: 5px;
-     
+        margin-bottom: 2em;
     }
 
     p{
@@ -59,12 +82,26 @@ html, body{
 
     }
     .sign-up:hover {
-        color:rgba(0, 81, 255, 0.3);
+        color:rgb(0, 4, 255);
     }
 
     .submit-button{
         padding:1em;
-      
+        padding-left:5em;
+        padding-right:5em;
+        font-weight: bold;
+        border-width:0px;
+        background-color:rgb(25, 87, 201);
+        color:white;
+        border-radius: 7px;
+    }
+
+    .submit-button:hover{
+        font-weight: bold;
+        border-width:0px;
+        background-color:white;
+        color:rgb(25, 87, 201);
+        box-shadow: 0px 0px 5px 1px rgba(32, 32, 32, 0.05);
     }
     
 }
