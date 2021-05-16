@@ -1,8 +1,7 @@
 html, body {
   margin: 0px;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
   overflow: hidden;
   background: #f8f8f8;
@@ -12,21 +11,21 @@ html, body {
   position: fixed;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  transform: translate(-50%, -50%);
+  align-items: center;
+  justify-content: center;
   background: white;
   border-radius: 30px;
+  border: 1px solid #6060ff;
+  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.137);
+  height: 500px;
+  width: 700px;
 }
 
 .header {
-  padding: 3em;
-  margin: 0px;
+  margin-top: 60px;
+  margin-left: 70px;
+  margin-bottom: 80px;
 }
 
 .header hr {
@@ -45,18 +44,21 @@ html, body {
 }
 
 .form {
-  padding: 3em;
-  margin: 0px;
-  padding-top: 0px !important;
+  margin-left: 70px;
+  padding-right: 200px;
 }
 
 .form .form_input {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 3fr;
-      grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 3fr;
   margin: 20px;
   margin-left: 0px;
+  width: 400px;
+}
+
+.form .input_text {
+  display: flex;
+  align-items: center;
 }
 
 .form label[for=email] {
@@ -75,10 +77,10 @@ html, body {
   color: black;
   outline: none;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: 0px 0px 5px 1px rgba(32, 32, 32, 0.02);
-          box-shadow: 0px 0px 5px 1px rgba(32, 32, 32, 0.02);
-  border-radius: 5px;
-  margin-bottom: 2em;
+  box-shadow: 0px 0px 5px 1px rgba(32, 32, 32, 0.02);
+  border-radius: 6px;
+  font-size: 16px;
+  border: 2px solid #afafff;
 }
 
 .form p {
@@ -86,32 +88,32 @@ html, body {
 }
 
 .form .sign-up {
-  margin-top: 2em;
-  font-weight: bold;
-  color: #1957c9;
+  color: #6060ff;
 }
 
 .form .sign-up:hover {
-  color: #0004ff;
+  color: #6060ff;
 }
 
 .form .submit-button {
-  padding: 1em;
-  padding-left: 5em;
-  padding-right: 5em;
   font-weight: bold;
   border-width: 0px;
-  background-color: #1957c9;
+  background-color: #6060ff;
   color: white;
   border-radius: 7px;
+  height: 50px;
+  width: 140px;
+  font-size: 16px;
+  transition: 200ms all;
+  cursor: pointer;
+  float: right;
 }
 
 .form .submit-button:hover {
   font-weight: bold;
   border-width: 0px;
   background-color: white;
-  color: #1957c9;
-  -webkit-box-shadow: 0px 0px 5px 1px rgba(32, 32, 32, 0.05);
-          box-shadow: 0px 0px 5px 1px rgba(32, 32, 32, 0.05);
+  color: #6060ff;
+  box-shadow: 0px 0px 5px 1px rgba(32, 32, 32, 0.05);
+  border: 1px solid #6060ff;
 }
-/*# sourceMappingURL=login.css.map */
