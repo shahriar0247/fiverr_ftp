@@ -34,27 +34,27 @@
             <form action="/register" method="POST">
             {% endif %}
                 <div class="form_input">
-                <label for="email">Email:</label>
+             <div class="input_text"> Email</div> 
                 <input type="text" name="email" class="login_input">
             </div>
             <div class="form_input">
-                <label for="password">Password:</label>
+                <div class="input_text">          Password</div> 
                 <input type="password" name="password"  pattern=".{6,}" class="login_input">
             </div>
                 {% if login == False %}
                 <div class="form_input">
-                <label for="password">Retype Password:</label>
-                <input type="password" name="password" pattern=".{6,}"  class="login_input" value="Retype Password">
+                    <div class="input_text">       Retype Password</div> 
+                <input type="password" name="password" pattern=".{6,}"  class="login_input">
             </div>
                 {% endif %}
            
-
+                <input type="submit" value="Login" class="submit-button">
                 <!-- Submit User Input -->
                 {% if login == True %}
-                <input type="submit" value="Login" class="submit-button">
-                <p>Don't have an account? <span class="sign-up">SIGN UP</span></p>
+               
+                <p>Don't have an account?    <a class="sign-up" href="/register">Register</a></p>
                 {% elif login == False %}
-                <input type="submit" value="Sign-Up" class="submit-button">
+                <p>Already have an account?    <a class="sign-up" href="/login">Login</a></p>
                 {% endif %}
             </form>
         </div>
