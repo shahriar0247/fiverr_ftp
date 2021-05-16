@@ -29,7 +29,7 @@
         <div class="form">
 
             {% if login == True %}
-            <form action="/login">
+            <form action="/login" method="POST">
             {% elif login == False %}
             <form action="/register" method="POST">
             {% endif %}

@@ -21,7 +21,10 @@ def firebase_initialize():
 def login(email, password):
     auth = firebase_initialize()
     try:
-        auth.create_user_with_email_and_password(email,password)
+        auth.sign_in_with_email_and_password(email,password)
+        session["email"] = email
+        session["password"] = password
+        session["username"] = email.split("@")[0]
         return True
     except HTTPError as e:
       return False
