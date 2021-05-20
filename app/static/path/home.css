@@ -29,6 +29,11 @@ html, body {
       grid-template-rows: 1fr 1fr 10fr;
   margin: 0px;
   color: #4b4b4b;
+  word-wrap: break-word;
+}
+
+.all div {
+  max-height: 100vh;
 }
 
 .first-heading {
@@ -46,13 +51,12 @@ html, body {
 .third-heading {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 3fr;
-      grid-template-columns: 1fr 3fr;
+  -ms-grid-columns: 2fr 5fr;
+      grid-template-columns: 2fr 5fr;
   -webkit-column-gap: 3em;
           column-gap: 3em;
   margin-left: 7em;
   margin-right: 7em;
-  padding-bottom: 4em;
 }
 
 .third-heading .first-section, .third-heading .second-section {
@@ -60,6 +64,7 @@ html, body {
   padding: 2em;
   display: -ms-grid;
   display: grid;
+  max-height: 40%;
 }
 
 .third-heading .first-section {
@@ -102,7 +107,8 @@ html, body {
       grid-template-columns: unset;
   -ms-grid-rows: unset;
       grid-template-rows: unset;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .third-heading .first-section .folders .one-folder {
@@ -110,12 +116,49 @@ html, body {
   border-radius: 5px;
   padding: 1em;
   margin-right: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.third-heading .first-section .folders .one-folder .file-info {
+  display: inline-block;
+  margin-left: 1em;
+}
+
+.third-heading .first-section .folders .one-folder .file-info p {
+  margin: 0px;
+  font-weight: bold;
+  font-size: 1.5vmin;
+}
+
+.third-heading .first-section .folders .one-folder .icon img {
+  width: 40px;
+  height: 40px;
+  margin: 0px;
 }
 
 .third-heading .first-section .folders .one-folder:hover {
   border: 1px solid #39cf91;
   background-color: #39cf91;
   color: white;
+}
+
+.third-heading .first-section .folders .one-folder:hover p {
+  color: white;
+}
+
+.third-heading .first-section .folders .one-folder:hover img {
+  -webkit-filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(13deg) brightness(108%) contrast(101%);
+          filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(13deg) brightness(108%) contrast(101%);
+}
+
+.third-heading .second-section {
+  -ms-grid-rows: 0.5fr 1fr 3fr;
+      grid-template-rows: 0.5fr 1fr 3fr;
 }
 
 .third-heading .second-section .ip {
