@@ -51,8 +51,8 @@ html, body {
 .third-heading {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 2fr 5fr;
-      grid-template-columns: 2fr 5fr;
+  -ms-grid-columns: 2fr 4fr;
+      grid-template-columns: 2fr 4fr;
   -webkit-column-gap: 3em;
           column-gap: 3em;
   margin-left: 7em;
@@ -119,20 +119,19 @@ html, body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .third-heading .first-section .folders .one-folder .file-info {
   display: inline-block;
-  margin-left: 1em;
 }
 
 .third-heading .first-section .folders .one-folder .file-info p {
   margin: 0px;
   font-weight: bold;
-  font-size: 1.5vmin;
+  font-size: 15px;
 }
 
 .third-heading .first-section .folders .one-folder .icon img {
