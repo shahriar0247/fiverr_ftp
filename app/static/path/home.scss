@@ -12,6 +12,7 @@ html,body{
     padding:0;
     box-sizing: border-box;
     height: 100vh;
+    width:100%;
     font-family: Arial, Helvetica, sans-serif;
     background-color: $backgroundColor;
 }
@@ -50,12 +51,12 @@ html,body{
 
 .third-heading{
     display: grid;
-    grid-template-columns: 1fr 3.5fr;
+    grid-template-columns: 1fr 3fr;
     //grid-template-rows: 1fr 10fr;
     column-gap: 3em;
     margin-left: 7em;
     margin-right: 7em;
-    margin-bottom: 4em;
+    padding-bottom: 4em;
 
     .first-section, .second-section{
         border-radius: 10px;
@@ -64,7 +65,7 @@ html,body{
     }
 
     .first-section{
-        grid-template-rows: 1fr 0.5fr 3fr;
+        grid-template-rows: 0.5fr 0.5fr minmax(30ch, 60ch);
 
         .title{
             display: flex;
@@ -93,10 +94,53 @@ html,body{
 
         .folders{
             display: grid;
-            grid-template-rows: 1fr;
-            overflow: scroll;
-            
+            //grid-template-rows: minmax(0, 1fr) 300px;
+            row-gap: 1em;
+            margin-top:1em;
+            grid-auto-flow: row;
+            grid-auto-rows: 20%;
+            grid-template-columns: unset;
+            grid-template-rows: unset;
+            overflow:scroll;
+            //overflow-y: scroll;
+            //overflow-x:hidden;
+
+            .one-folder{
+                border:1px solid gray;
+                border-radius: 5px;
+                padding: 1em;
+                margin-right:1em;
+            }
+
+            .one-folder:hover{
+                border:1px solid $primaryColor;
+                background-color: $primaryColor;
+                color: white;
+            }
         }
+    }
+
+    .second-section{
+        .ip{
+            display: block;
+        }
+        .first-sub-section{
+            display: flex;
+            justify-content: space-between;
+
+            h5{
+                margin:0px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    .third-heading{
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: unset;
+        row-gap: 3em;
     }
 }
 
