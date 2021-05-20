@@ -1,32 +1,109 @@
+$primaryColor: #39cf91;
+$backgroundColor:#f0faf9;
+$textColor: #4b4b4b;
+$textHoverColor:white;
+$divColor:white;
+$divHoverColor:$primaryColor;
+$redColor:#d86e7a;
+$smallTextColor:#b8bbc2;
+
 html,body{
     margin: 0;
     padding:0;
     box-sizing: border-box;
     height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: $backgroundColor;
 }
 
+.small-text{
+    color:$smallTextColor;
+}
 
+.main-div{
+    background-color: $divColor;
+}
+
+.accent{
+    color: $primaryColor;
+}
 
 .all{
     height: 100vh;
     display: grid;
     grid-template-rows: 1fr 1fr 10fr;
-    margin: 10px;
-    margin-top: 0;
-    margin-bottom: 0;
-   
+    margin:0px;
+    color: $textColor;
 }
 
+.first-heading{
+    padding-left: 7em;
+    padding-right: 7em;
+}
+
+.second-heading{
+    text-align: center;
+    color:$primaryColor;
+    padding-top:1em;
+    padding-bottom: 1em;
+}
 
 .third-heading{
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 10fr;
+    grid-template-columns: 1fr 3.5fr;
+    //grid-template-rows: 1fr 10fr;
+    column-gap: 3em;
+    margin-left: 7em;
+    margin-right: 7em;
+    margin-bottom: 4em;
+
+    .first-section, .second-section{
+        border-radius: 10px;
+        padding:2em;
+        display: grid;
+    }
+
+    .first-section{
+        grid-template-rows: 1fr 0.5fr 3fr;
+
+        .title{
+            display: flex;
+            justify-content: space-between;
+
+            .share, .upload{
+                margin:0px;
+            }
+        }
+
+        .search{
+            //padding-top:0.05rem;
+
+            .search-input{
+                padding: 1em;
+                border-top:none;
+                border-left:none;
+                border-right:none;
+                
+            }
+
+            .search-input:focus{
+                outline: none;
+            }
+        }
+
+        .folders{
+            display: grid;
+            grid-template-rows: 1fr;
+            overflow: scroll;
+            
+        }
+    }
 }
 
+/*
 @media screen and (min-width: 992px){
    .all{
-    margin: 100px;
+    margin: 0px;
     margin-top: 0;
     margin-bottom: 0;
    }
@@ -36,6 +113,7 @@ html,body{
     grid-template-rows: 1fr;
 }
 }
+*/
 
 .folder{
     display: grid;
