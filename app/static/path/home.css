@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
@@ -32,10 +33,6 @@ html, body {
   word-wrap: break-word;
 }
 
-.all div {
-  max-height: 100vh;
-}
-
 .first-heading {
   padding-left: 7em;
   padding-right: 7em;
@@ -49,22 +46,16 @@ html, body {
 }
 
 .third-heading {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 2fr 4fr;
-      grid-template-columns: 2fr 4fr;
   -webkit-column-gap: 3em;
           column-gap: 3em;
   margin-left: 7em;
   margin-right: 7em;
 }
 
-.third-heading .first-section, .third-heading .second-section {
+.third-heading .first-section,
+.third-heading .second-section {
   border-radius: 10px;
   padding: 2em;
-  display: -ms-grid;
-  display: grid;
-  max-height: 40%;
 }
 
 .third-heading .first-section {
@@ -81,7 +72,8 @@ html, body {
           justify-content: space-between;
 }
 
-.third-heading .first-section .title .share, .third-heading .first-section .title .upload {
+.third-heading .first-section .title .share,
+.third-heading .first-section .title .upload {
   margin: 0px;
 }
 
@@ -111,53 +103,8 @@ html, body {
   overflow-x: hidden;
 }
 
-.third-heading .first-section .folders .one-folder {
-  border: 1px solid gray;
-  border-radius: 5px;
-  padding: 1em;
-  margin-right: 1em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.third-heading .first-section .folders .one-folder .file-info {
-  display: inline-block;
-}
-
-.third-heading .first-section .folders .one-folder .file-info p {
-  margin: 0px;
-  font-weight: bold;
-  font-size: 15px;
-}
-
-.third-heading .first-section .folders .one-folder .icon img {
-  width: 40px;
-  height: 40px;
-  margin: 0px;
-}
-
-.third-heading .first-section .folders .one-folder:hover {
-  border: 1px solid #39cf91;
-  background-color: #39cf91;
-  color: white;
-}
-
-.third-heading .first-section .folders .one-folder:hover p {
-  color: white;
-}
-
-.third-heading .first-section .folders .one-folder:hover img {
-  -webkit-filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(13deg) brightness(108%) contrast(101%);
-          filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(13deg) brightness(108%) contrast(101%);
-}
-
 .third-heading .second-section {
-  -ms-grid-rows: 0.5fr 1fr 3fr;
-      grid-template-rows: 0.5fr 1fr 3fr;
+  height: 70vh;
 }
 
 .third-heading .second-section .ip {
@@ -177,18 +124,6 @@ html, body {
   margin: 0px;
 }
 
-@media screen and (max-width: 768px) {
-  .third-heading {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-rows: 1fr;
-        grid-template-rows: 1fr;
-    -ms-grid-columns: unset;
-        grid-template-columns: unset;
-    row-gap: 3em;
-  }
-}
-
 /*
 @media screen and (min-width: 992px){
    .all{
@@ -203,11 +138,79 @@ html, body {
 }
 }
 */
-.folder {
+.all_folders {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.one-folder {
+  border: 1px solid gray;
+  border-radius: 5px;
+  height: 60px;
+  width: 300px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 2fr 5fr;
-      grid-template-columns: 2fr 5fr;
-  width: 200px;
+  -ms-grid-columns: 1fr 4fr;
+      grid-template-columns: 1fr 4fr;
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.one-folder .file-info {
+  margin: auto;
+  overflow: hidden;
+  margin-left: 0;
+  margin-right: 20px;
+}
+
+.one-folder .file-info div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 15px;
+}
+
+.one-folder .icon {
+  width: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+}
+
+.one-folder .icon img {
+  width: 100%;
+  display: block;
+  margin: auto;
+}
+
+.one-folder:hover {
+  border: 1px solid #39cf91;
+  background-color: #39cf91;
+  color: white;
+}
+
+.one-folder:hover div {
+  color: white;
+}
+
+.one-folder:hover img {
+  -webkit-filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(13deg) brightness(108%) contrast(101%);
+          filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(13deg) brightness(108%) contrast(101%);
+}
+
+@media screen and (max-width: 1000px) {
+  .all {
+    width: 100vw;
+  }
 }
 /*# sourceMappingURL=home.css.map */
