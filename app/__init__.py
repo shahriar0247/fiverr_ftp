@@ -8,3 +8,4 @@ app.secret_key = "this iadfj alds jflakdsjfakdsl jfdslkfjdas;lkf ja;sldjkfalsd;k
 
 
 from app.views.login import login
+from app.views.path import home

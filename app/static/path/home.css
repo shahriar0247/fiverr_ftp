@@ -1,0 +1,216 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100vh;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f0faf9;
+}
+
+.small-text {
+  color: #b8bbc2;
+}
+
+.main-div {
+  background-color: white;
+}
+
+.accent {
+  color: #39cf91;
+}
+
+.all {
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr 10fr;
+      grid-template-rows: 1fr 1fr 10fr;
+  margin: 0px;
+  color: #4b4b4b;
+  word-wrap: break-word;
+}
+
+.first-heading {
+  padding-left: 7em;
+  padding-right: 7em;
+}
+
+.second-heading {
+  text-align: center;
+  color: #39cf91;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.third-heading {
+  -webkit-column-gap: 3em;
+          column-gap: 3em;
+  margin-left: 7em;
+  margin-right: 7em;
+}
+
+.third-heading .first-section,
+.third-heading .second-section {
+  border-radius: 10px;
+  padding: 2em;
+}
+
+.third-heading .first-section {
+  -ms-grid-rows: 0.5fr 0.5fr minmax(30ch, 60ch);
+      grid-template-rows: 0.5fr 0.5fr minmax(30ch, 60ch);
+}
+
+.third-heading .first-section .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.third-heading .first-section .title .share,
+.third-heading .first-section .title .upload {
+  margin: 0px;
+}
+
+.third-heading .first-section .search .search-input {
+  padding: 1em;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.third-heading .first-section .search .search-input:focus {
+  outline: none;
+}
+
+.third-heading .first-section .folders {
+  display: -ms-grid;
+  display: grid;
+  row-gap: 1em;
+  margin-top: 1em;
+  grid-auto-flow: row;
+  grid-auto-rows: 20%;
+  -ms-grid-columns: unset;
+      grid-template-columns: unset;
+  -ms-grid-rows: unset;
+      grid-template-rows: unset;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.third-heading .second-section {
+  height: 70vh;
+}
+
+.third-heading .second-section .ip {
+  display: block;
+}
+
+.third-heading .second-section .first-sub-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.third-heading .second-section .first-sub-section h5 {
+  margin: 0px;
+}
+
+/*
+@media screen and (min-width: 992px){
+   .all{
+    margin: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
+   }
+   .third-heading{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr;
+}
+}
+*/
+.all_folders {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.one-folder {
+  border: 1px solid gray;
+  border-radius: 5px;
+  height: 60px;
+  width: 300px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 4fr;
+      grid-template-columns: 1fr 4fr;
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.one-folder .file-info {
+  margin: auto;
+  overflow: hidden;
+  margin-left: 0;
+  margin-right: 20px;
+}
+
+.one-folder .file-info div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 15px;
+}
+
+.one-folder .icon {
+  width: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+}
+
+.one-folder .icon img {
+  width: 100%;
+  display: block;
+  margin: auto;
+}
+
+.one-folder:hover {
+  border: 1px solid #39cf91;
+  background-color: #39cf91;
+  color: white;
+}
+
+.one-folder:hover div {
+  color: white;
+}
+
+.one-folder:hover img {
+  -webkit-filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(13deg) brightness(108%) contrast(101%);
+          filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(13deg) brightness(108%) contrast(101%);
+}
+
+@media screen and (max-width: 1000px) {
+  .all {
+    width: 100vw;
+  }
+}
+/*# sourceMappingURL=home.css.map */
