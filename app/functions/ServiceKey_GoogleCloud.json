@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "sachingriffithapp",
+  "private_key_id": "26780c83b29e45192a3433c771c93bd12b2b537d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDNcosl8s8y1s1p\n41/nWOOF1Mcc1ycDr7NaXZiSBKQ7QeJjvuP/kIZ9XzRNn90O4+nr7SkPaMujt4JP\n9Ydvgc9FaCtCHcyJ+XPHYYjL/oDyvLdCx7Vb/z4yQ5/B0JDx/sq5UkMO6HgBiDJ6\n0RzE8+C8UbK1YgfxMsJTefRRad7+nH8AkJdjj+y024+NFCgyapmXI5IRx9MlCbpJ\nJHjHMETkXkKxA1BbNZ5l0bE3d5l/LBCQZaZ8DAEavA8vy8ZHH80AGrQxDopeqy0C\np87ZFIUZdt/4VXF9fkPYiirpWo5lzTXC+weRwtr+YsfK8to4qfim9qDI8/XWJ1+U\nD2pYZbd1AgMBAAECggEAGA7qSYraBaeOzXARanuHxUPJ/1AYov9fvtzIAY1mmAPa\nmXigpWxMu4C7FL38OoKpAXY3wTSx6B2Utn1Xm1C1r3iH3Em2CpA6JSaASPcoLYS4\n5yqQy9GjfGpb2mvslVITdkkyThwd9Xv4AVbcihnO/u6IQWJV8MJTbEgTOrdtpB4E\nsPRaT5vmoE/sEk/PF9kVd0rKUSUCkChXHU475c+ujGF4Y3/WOnabFxxDXwIi+kNU\nnAMBrccKLDttUNX2zFdI2oiWRlVI2YnuGjVyWkHp9eWEknDo/ZujLOrFpn2S9GSc\nB1weFHZscXrANZE7n5T7AC3cu7N4OuC+lFQc0ezczwKBgQDmSmIPp0QU5Co/IEsn\napRRjTlEWYKQcwWRSgXQrZ+nn4TIbZq3juii8zyB+jP5nfZrG1cdgcisz1JoUyOl\n/m7IPYM9LxXWF4cXpCtW50llRaDSHLBTb9baIg3Tn1drwQgwx6WQKwuxBNy/ncuJ\nA6bQvm8evjD8nCUWlwfuCj1/LwKBgQDkYidIaHqrMVw5SK4R/No5SESdWH218GF8\nDRn610gM5ZSnFGrbiSzB4erYs52F0HzAYb00LI7zpk7MMlNPl0uF00WyL6K0BFVy\njEAsXe296ecVg8yhnRXzBqlasxA2k18mLFjwBK2xkzXiifBJwgbKAJ4pE4LYuZ4q\nMn6VI3QqmwKBgH8ecCLT4fDmQau218VaP6UEn6frAPdbhqc8hRk7vfV5SIKafdz1\nNdU9DxlwU2Bmoa9d2Cihi3RYvNR5kCQA3oYJ7nfHlfYn5ppWNNYztYABf1R8IZjt\nE1w1kAxQ2KDSXQMQMYPzPvDoDjJ3l/J54Ys4k34U3lWSm6ZsmCP94xRhAoGBAJu4\nyWw3wRylZWqxwe8F544TVqWqxtydcPryu/orfDc++yMJausSF3CDqGvl3Mx3IfjT\nK/09PKOpjCTzU5b7ZEV1jxo2HMx9//1A4CjgStCpgiVLXuX7hBHXQvZTDgUIa2JN\n7r6Jkh14cM9smmjQYWyvCyia4yb/OXcwQttR901tAoGAFRHFG51LKdI2hDoJMjV3\nCDO3T0ebGuO2WWTLf4s8tZlkPeGvgbIDrTSOx4sRLrEZT3YI4jArmX4M71y+fCg7\nERAsYkhjhHBLyaQ1LvwA84RBQp0F4LhNSnHzf7oO1ioOSe4hGX2gNE/itu1/VyIU\n824HNXkF0Ga0Uf7LDeplVDk=\n-----END PRIVATE KEY-----\n",
+  "client_email": "cloud-storage@sachingriffithapp.iam.gserviceaccount.com",
+  "client_id": "102273488641621107150",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cloud-storage%40sachingriffithapp.iam.gserviceaccount.com"
+}
