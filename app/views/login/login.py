@@ -1,3 +1,4 @@
+from werkzeug.utils import redirect
 from app.functions.firebase_log import login, signup
 from app import app
 from flask import render_template, request
@@ -8,7 +9,7 @@ def login_view():
     if request.method == "POST":
         email  = request.form.get("email")
         password = request.form.get("password")
-        return login(email,password)
+        return redirect("/")
     return render_template('login/login.html', login=True)
 
 
@@ -17,5 +18,5 @@ def register_view():
     if request.method == "POST":
         email  = request.form.get("email")
         password = request.form.get("password")
-        return signup(email,password)
-    return render_template('/login/login.html', login=False)
+        return redirect("/")
+    return render_template('login/login.html', login=False)
