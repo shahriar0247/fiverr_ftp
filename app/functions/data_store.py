@@ -18,7 +18,7 @@ def get_entity(entity_id):
 def get_entity_id(entity):
     return entity.key.id  
 
-def store_data(filename, filepath, fileid, filesize, fileowner, fileshareurl):
+def store_data(filename, filepath, fileid, filesize, fileowner, fileshareurl, filetype):
     client = get_data_store_client()
     entity = datastore.Entity(client.key("File Infp"))
 
@@ -28,7 +28,8 @@ def store_data(filename, filepath, fileid, filesize, fileowner, fileshareurl):
         'Fileid': fileid,
         'Filesize': filesize,
         'Fileowner':fileowner,
-        'Fileshareurl':fileshareurl
+        'Fileshareurl':fileshareurl,
+        "Filetype" : filetype
     })
     client.put(entity)
 
@@ -59,9 +60,11 @@ def list_path_entites(path):
     all_path_entites =[]
     for one in all_entites:
         filepath = one["Filepath"]
+        username = one["Fileowner"]
         if path == filepath:
             all_path_entites.append(one)
     return all_path_entites
+
 
 
 def delete_entity(entity_id):

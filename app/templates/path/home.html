@@ -21,23 +21,55 @@
             <h1>Home</h1>
         </div>
         <div class="third-heading">
-          
+            <div class="first-section">
+                <form action="/create_folder" method="POST">
+                <input type="text" name="folder_name">
+                <input type="text" name="path">
+                <input type="submit">
+                </form>
+            </div>
             <div class="second-section main-div">
 
            <div class="all_folders">
 
 
             {% for one_folder in all_folders %}
+            {% if one_folder["Filetype"] == "folder"%}
+                <div class="one-folder" id="folder{{loop.index}}" >
+                    <div class="icon">
+                        <img src="/static/img/folder.svg" alt="Folder icon" loading="lazy" class="icon-image">
+                    </div>
+                    <div class="file-info" >
+                        <div  id="foldername{{loop.index}}" >{{one_folder["Filename"]}}</div>
+                   
+                    </div>
+                    <script>
+                        "/?path=test/inside_folder"
+                        folder_name{{loop.index}} = document.getElementById("foldername{{loop.index}}").innerText
+                        folder{{loop.index}} = document.getElementById("folder{{loop.index}}")
+                        folder{{loop.index}}.addEventListener("click", function(){
+                            current_path = window.location.search.replace("?path=","")
+                            new_loc = current_path + "/" + folder_name{{loop.index}}
+                            window.location.href = window.location.origin + '/?path=' + new_loc
+                        })
+                        
+                       
+
+                    </script>
+                   
+                </div>
+                {% else %}
                 <div class="one-folder">
                     <div class="icon">
-                        <img src="/static/img/image-icon.svg" alt="Folder icon" loading="lazy" class="icon-image">
+                        <img src="/static/img/file.svg" alt="Folder icon" loading="lazy" class="icon-image">
                     </div>
                     <div class="file-info">
-                        <div>{{one_folder["name"]}}</div>
-                        <div class="accent">{{one_folder["size"]}}</div>
+                        <div>{{one_folder["Filename"]}}</div>
+                        <div class="accent">{{one_folder["Filesize"]}}</div>
                     </div>
                    
                 </div>
+                {% endif %}
             {% endfor %}
 
             

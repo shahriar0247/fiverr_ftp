@@ -1,0 +1,76 @@
+<script src="https://www.gstatic.com/firebasejs/ui/4.4.0/firebase-ui-auth.js"></script>
+<link type="text/css" rel="stylesheet"
+href="https://www.gstatic.com/firebasejs/ui/4.4.0/firebase-ui-auth.css" />
+
+<script>
+    var firebaseConfig = {
+ apiKey: "<API_KEY>",
+ authDomain: "<PROJECT_ID>.firebaseapp.com",
+ databaseURL: "https://<DATABASE_NAME>.firebaseio.com",
+ projectId: "<PROJECT_ID>",
+ storageBucket: "<BUCKET>.appspot.com",
+ messagingSenderId: "<SENDER_ID>",
+ };
+ firebase.initializeApp(firebaseConfig);
+
+</script>
+
+
+
+
+
+
+
+
+<div id="firebase-auth-container"></div>
+ <button id="sign-out" hidden="true">Sign out</button>
+ <div id="login-info" hidden="true">
+ <h2>Login Info</h2>
+ {% if user_data %}
+ <dl>
+ <dt>Name:</dt><dd>{{ user_data['name'] }}</dd>
+ <dt>Email:</dt><dd>{{ user_data['email'] }}</dd>
+ <dt>Last 10 Visits:</dt><dd>
+ {% for time in times %}
+ <p>{{ time['timestamp'] }}</p>
+ {% endfor %}
+ </dd>
+ </dl>
+ {% elif error_message %}
+ <p>Error Message: {{ error_message }}</p>
+ {% endif %}
+ </div>
+
+
+ <script>document.getElementById('sign-out').onclick = function() {
+    // ask firebase to sign out the user
+    firebase.auth().signOut();
+   };
+
+   var uiConfig = {
+ signInSuccessUrl: '/',
+ signInOptions: [
+ firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+ firebase.auth.EmailAuthProvider.PROVIDER_ID
+ ]
+};
+firebase.auth().onAuthStateChanged(function(user) {
+ if(user) {
+ document.getElementById('sign-out').hidden = false;
+ document.getElementById('login-info').hidden = false;
+ console.log('Signed in as ${user.displayName} (${user.email})');
+ user.getIdToken().then(function(token) {
+ document.cookie = "token=" + token;
+ });
+ } else {
+ var ui = new firebaseui.auth.AuthUI(firebase.auth());
+ ui.start('#firebase-auth-container', uiConfig);
+ document.getElementById('sign-out').hidden = true;
+ document.getElementById('login-info').hidden = true;
+ document.cookie = "token=";
+ }
+ }, function(error) {
+ console.log(error);
+ alert('Unable to log in: ' + error);
+ });
+   </script>

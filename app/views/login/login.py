@@ -1,3 +1,4 @@
+from flask.globals import session
 from werkzeug.utils import redirect
 from app.functions.firebase_log import login, signup
 from app import app
@@ -9,6 +10,7 @@ def login_view():
     if request.method == "POST":
         email  = request.form.get("email")
         password = request.form.get("password")
+        session["username"] = email
         return redirect("/")
     return render_template('login/login.html', login=True)
 
