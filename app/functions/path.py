@@ -13,10 +13,12 @@ def get_all_folders(path):
 
 def create_folder(foldername, filepath):
     all_folders = get_all_folders(filepath)
+    
     for one_folder in all_folders:
         if foldername == one_folder["Filename"]:
             return "Folder already exists"
         
+    filepath = "/home/shah" + filepath
     store_data(foldername, filepath, 00, 00, session["username"],"test","folder")
     return True
 

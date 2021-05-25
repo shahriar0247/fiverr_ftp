@@ -245,4 +245,46 @@ body {
   color: #39cf91;
   background-color: white;
 }
+
+.folder_dialogue_div {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.548);
+  padding: 50%;
+  display: none;
+}
+
+.folder_dialogue_div .folder_dialogue {
+  background: white;
+  padding: 30px;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-bottom: 50px;
+  border-radius: 15px;
+}
+
+.folder_dialogue_div input[type=text] {
+  height: 30px;
+  outline: none;
+  width: 300px;
+  border: 2px solid #39cf91;
+  border-radius: 5px;
+  margin: 10px;
+  margin-left: 0;
+  margin-top: 0;
+  padding-left: 20px;
+}
+
+.folder_dialogue_div input[type=submit] {
+  height: 40px;
+  width: 100px;
+  background: #39cf91;
+  color: white;
+  outline: none;
+  border: 2px solid #39cf91;
+  font-size: 17px;
+}
 /*# sourceMappingURL=home.css.map */

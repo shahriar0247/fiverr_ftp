@@ -23,11 +23,27 @@
         <div class="third-heading">
             <div class="first-section">
                 {{errors}}
-                <form action="/create_folder" method="POST">
-                <input type="text" name="folder_name">
-                <input type="text" name="path">
-                <input type="submit">
-                </form>
+
+              
+
+                <div class="btn" onclick="create_folder()">
+                    Create Folder
+                </div>
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 <form action="/upload_file" method="POST" enctype="multipart/form-data" class="hidden">
                 <input type="file" name="uploaded_file" id="file_select" multiple>
@@ -108,6 +124,54 @@
 
             </div>
         </div>
+
+
+        <div class="folder_dialogue_div">
+            <div class="folder_dialogue">
+            <h2>Create a folder</h2>
+            <p>Type the name of the folder</p>
+            <form action="/create_folder" method="POST">
+            <input type="text" name="folder_name">
+            <input type="text" name="path" id="filepath2" class="hidden">
+                <div class="btn" id="create_fold_submit" onclick="create_folder_submit()">Create</div>
+            <input type="submit" id="create_submit" class="hidden">
+            </form>
+
+        </div>
+    </div>
+  <script>
+                    function create_folder(){
+                        document.getElementsByClassName("folder_dialogue_div")[0].style.display = "block"
+                    file_path = get_path()
+                    filepath2 = document.getElementById("filepath2")
+                    filepath2.value = file_path
+
+                    create_fold_submit = document.getElementById("create_fold_submit")
+
+                 
+
+                }
+
+                function create_folder_submit(){
+                    create_submit = document.getElementById("create_submit")
+                        create_submit.click()
+                }
+
+
+                </script>
+
+
+<script>
+    function get_path(){
+        path =  window.location.search.replace("?path=","")
+        if (path == ""){
+            path == "/"
+        }
+        return path
+    }
+</script>
+
+
 </body>
 
 </html>
