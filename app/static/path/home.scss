@@ -212,3 +212,30 @@ body {
     }
     
 }
+
+.hidden{
+    display: none;
+}
+
+.btn{
+    background-color: $primaryColor;
+    color: white;
+    height: 45px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 6px;
+    margin: 10px;
+    border: 2px solid $primaryColor;
+    cursor: pointer;
+    transition: 200ms all;
+}
+
+
+.btn:hover{
+    color: $primaryColor;
+    background-color: white;
+
+}

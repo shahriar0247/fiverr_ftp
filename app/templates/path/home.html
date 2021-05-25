@@ -22,11 +22,41 @@
         </div>
         <div class="third-heading">
             <div class="first-section">
+                {{errors}}
                 <form action="/create_folder" method="POST">
                 <input type="text" name="folder_name">
                 <input type="text" name="path">
                 <input type="submit">
                 </form>
+
+                <form action="/upload_file" method="POST" enctype="multipart/form-data" class="hidden">
+                <input type="file" name="uploaded_file" id="file_select" multiple>
+              
+                <input type="text" name="filepath" id="filepath">
+                <input type="submit" value="Submit" id="upload_submit">
+
+
+                </form>
+                <div class="btn" onclick="upload_file()">
+                    Upload Files
+                </div>
+                <script>
+                    function upload_file(){
+
+                    file_path = window.location.search.replace("?path=","")
+                    filepath_input = document.getElementById("filepath")
+
+                    filepath_input.value = file_path
+                    file_select = document.getElementById("file_select")
+                    file_select.click()
+                    
+                    file_select.onchange = function(e){
+                    upload_submit = document.getElementById("upload_submit")
+                    upload_submit.click()
+                }
+
+                }
+                </script>
             </div>
             <div class="second-section main-div">
 
