@@ -2,6 +2,9 @@ from app.functions.modify_files import upload_file
 from flask import session
 from app.functions.data_store import list_path_entites, store_data
 import random
+from urllib.parse import unquote
+
+
 
 def get_all_folders(path):
     if path == "" or path == None:
@@ -18,7 +21,8 @@ def create_folder(foldername, filepath):
         if foldername == one_folder["Filename"]:
             return "Folder already exists"
         
-    filepath = "/home/shah" + filepath
+    filepath = "/home/" + session["username"] + filepath
+    filepath = unquote(filepath)
     store_data(foldername, filepath, 00, 00, session["username"],"test","folder")
     return True
 
@@ -29,7 +33,8 @@ def upload_files(file, filepath):
         if file.filename == one_folder["Filename"]:
             return file.filename +" already exists"
     
-    filepath = "/home/shah" + filepath
+    filepath = "/home/" + session["username"] + filepath
+    filepath = unquote(filepath)
     file_size = get_file_size(len(file.stream.read()))
 
 

@@ -10,7 +10,7 @@ def login_view():
     if request.method == "POST":
         email  = request.form.get("email")
         password = request.form.get("password")
-        session["username"] = email
+        session["username"] = email.split("@")[0]
         return redirect("/")
     return render_template('login/login.html', login=True)
 

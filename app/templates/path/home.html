@@ -22,8 +22,12 @@
         </div>
         <div class="third-heading">
             <div class="first-section">
-                {{errors}}
-
+              
+                {% for error in errors  %}
+                <script>
+                    alert('{{error}}')
+                </script>
+                {% endfor %}
               
 
                 <div class="btn" onclick="create_folder()">

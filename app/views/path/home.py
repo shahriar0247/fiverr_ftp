@@ -1,4 +1,5 @@
 
+from os import error
 from app.functions.path import create_folder, get_all_folders, upload_files
 import json
 from app import app
@@ -18,6 +19,7 @@ def home_view():
                     return render_template('path/home.html', all_folders=all_folders)
             except KeyError:
                 return render_template('path/home.html', all_folders=all_folders)
+            errors = json.loads(errors)
             return render_template('path/home.html', all_folders=all_folders, errors=errors)
     except KeyError: pass
     return redirect("/login")
@@ -25,6 +27,7 @@ def home_view():
 @app.route("/create_folder", methods=["POST"])
 def create_folder_view():
     create_folder(request.form.get("folder_name"), request.form.get("path"))
+    return redirect("/?path=" + request.form.get("path"))
 
 @app.route("/upload_file", methods=["POST"])
 def upload_file_view():
