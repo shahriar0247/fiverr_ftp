@@ -281,3 +281,24 @@ body {
         font-size: 17px;
     }
 }
+
+.context_menu{
+    display: none;
+    position: absolute;
+    background: white;
+    border: 1px solid $primaryColor;
+    padding: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 15px;
+    animation: context 300ms;
+}
+
+@keyframes context {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

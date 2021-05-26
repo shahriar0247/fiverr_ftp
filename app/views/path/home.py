@@ -1,6 +1,9 @@
 
+import io
 from os import error
-from app.functions.path import create_folder, get_all_folders, upload_files
+
+from flask.helpers import send_file
+from app.functions.path import create_folder, delete_file, download_file2, get_all_folders, upload_files
 import json
 from app import app
 from flask import render_template, request, session, redirect
@@ -46,3 +49,23 @@ def upload_file_view():
 
 
     return redirect("/?path=" + filepath)
+
+@app.route('/dd/<filename>', methods=["POST"])
+def dd_view(filename):
+    path = request.form.get("path")
+    fun_type = request.form.get("type")
+    element_name = request.form.get("element_name")
+    if fun_type == "delete":
+        error = delete_file(element_name, path)
+        if error != None:
+            session["error"] = json.dumps([error])
+    elif fun_type == "download":
+        binary, content_type, filename = download_file2(element_name, path)
+        return send_file(
+                     io.BytesIO(binary),
+                     attachment_filename=filename,
+                     mimetype=content_type
+               )
+    return redirect("/?path=" + path)
+
+    

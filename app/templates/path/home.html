@@ -158,6 +158,7 @@
 
                 function create_folder_submit(){
                     create_submit = document.getElementById("create_submit")
+            
                         create_submit.click()
                 }
 
@@ -176,6 +177,97 @@
 </script>
 
 
+
+<div class="context_menu">
+    <div class="btn" onclick="delete_file()">Delete</div>
+    <div class="btn" onclick="download_file()">Download</div>
+</div>
+<script>
+    (function() {
+        
+    document.oncontextmenu = handleMouseMove;
+    function handleMouseMove(event) {
+       
+        var eventDoc, doc, body;
+
+        event = event || window.event; // IE-ism
+
+        // If pageX/Y aren't available and clientX/Y are,
+        // calculate pageX/Y - logic taken from jQuery.
+        // (This is to support old IE)
+        if (event.pageX == null && event.clientX != null) {
+            eventDoc = (event.target && event.target.ownerDocument) || document;
+            doc = eventDoc.documentElement;
+            body = eventDoc.body;
+
+            event.pageX = event.clientX +
+              (doc && doc.scrollLeft || body && body.scrollLeft || 0) -
+              (doc && doc.clientLeft || body && body.clientLeft || 0);
+            event.pageY = event.clientY +
+              (doc && doc.scrollTop  || body && body.scrollTop  || 0) -
+              (doc && doc.clientTop  || body && body.clientTop  || 0 );
+        }
+        show_menu(event.pageX, event.pageY)
+        return false
+        // Use event.pageX / event.pageY here
+    }
+})();
+
+
+function show_menu(x,y){
+    
+    context_menu = document.getElementsByClassName("context_menu")[0]
+    
+    context_menu.style.display = "block"
+context_menu.style.left = x +10 + "px"
+context_menu.style.top = y+10  + "px"
+elementMouseIsOver = document.elementFromPoint(x, y);
+if (elementMouseIsOver.classList.contains("one-folder")){
+element = (elementMouseIsOver)
+}
+else{
+    element = (  elementMouseIsOver.parentNode.parentNode)
+}
+ set_selected_filename(element)
+}
+document.onclick = hide_menu;
+function hide_menu(){
+    context_menu = document.getElementsByClassName("context_menu")[0]
+    context_menu.style.display = "none"
+}
+</script>
+
+
+<script>
+    function set_selected_filename(element){
+        element_name = (element.getElementsByClassName("file-info")[0].getElementsByTagName("div")[0].innerText) 
+        document.getElementById("element_name").value = element_name
+
+        file_path = get_path()
+        document.getElementById("filepath3").value = file_path
+
+        document.getElementById("the_dd_form").action = "/dd/" + element_name
+    }
+
+    function delete_file(){
+        document.getElementById("dd_type").value = "delete"
+        document.getElementById("dd_submit").click()
+    }
+    function download_file(){
+        document.getElementById("dd_type").value = "download"
+        document.getElementById("dd_submit").click()
+        
+
+        
+    }
+</script>
+
+<form action="/dd" class="hidden" method="POST" id="the_dd_form">
+<input type="text" name="type" id="dd_type">
+<input type="text" name="path" id="filepath3">
+<input type="text" name="element_name" id="element_name">
+<input type="submit" value="" id="dd_submit">
+</form>
 </body>
 
 </html>

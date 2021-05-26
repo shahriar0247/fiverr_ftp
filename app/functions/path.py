@@ -1,6 +1,6 @@
-from app.functions.modify_files import upload_file
+from app.functions.modify_files import download_file, upload_file
 from flask import session
-from app.functions.data_store import list_path_entites, store_data
+from app.functions.data_store import delete_entity, get_entity_id, list_all_entites, list_path_entites, store_data
 import random
 from urllib.parse import unquote
 
@@ -63,3 +63,27 @@ def get_file_size(file_size):
 
     return file_size_text[0:2] + file_size_text[-4:-1] + "B"
         
+
+def delete_file(filename,path):
+    file_path = "/home/" + session["username"] + path + "/" + filename 
+    all_folders = list_all_entites()
+    for one_folder in all_folders:
+     
+        if file_path in one_folder["Filepath"]:
+            return "Folder has files inside of it"
+    all_folders = get_all_folders(path)
+    for one_folder in all_folders:
+        if filename == one_folder["Filename"]:
+            delete_entity(get_entity_id(one_folder))
+
+
+def download_file2(filename,path):
+    all_folders = get_all_folders(path)
+    for one_folder in all_folders:
+        if filename == one_folder["Filename"]:
+            file_id = one_folder["Fileid"]
+            binary,content_type = download_file(file_id)
+            if binary != False:
+                return binary, content_type, filename
+
+    

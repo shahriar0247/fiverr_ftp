@@ -14,12 +14,13 @@ def upload_file(bytedata, content_type, filename):
         return False
 
 def download_file(filename):
+    filename = str(filename)
     try:
         bucket = get_bucket()
         
         blob = bucket.blob(filename)
         binary = blob.download_as_bytes()
-        return binary
+        return binary, blob.content_type
     except Exception as e:
         print(e)
         return False
